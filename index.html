@@ -29,6 +29,7 @@
 	maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width (wrong for most sites)
 	-->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
 	
 	<!-- Use Iconifyer to generate all the favicons and touch icons you need: http://iconifier.net -->
 	<link rel="shortcut icon" href="favicon.ico" />
@@ -64,24 +65,37 @@
 	
 	</header>
 	
-	<div id="form-controller">
+	<div id="form-container">
 		
-		<h1>Who would you like to see talk to each other?</h1>
+		<h2>Who would you like to see talk to each other?</h2>
         
         <form id="the-form" method="post" action="#">
             
             <div id="field-container">
-                <input type="text" name="person1" />
+                <input type="text" name="p1" />
                 <span class="talks-to">Talks to</span>
-                <input type="text" name="person2" />
+                <input type="text" name="p2" />
             </div>
             <div id="submit-container">
-                <input type="submit" value="Add" />
+                <input class="add" type="submit" value="Add" />
             </div>
+            
+            <a id="back-to-list" href="#">See already suggested conversations</a>
             
         </form>
         
 	</div>
+    
+    <div id="pair-container">
+        
+        <h2>List of Missing Conversations</h2>
+        
+        <ul id="the-list" class="clearfix">
+        </ul>
+        
+        <a id="back-to-form" class="add" href="#">Add</a>
+        
+    </div>
 
 </div>
 
